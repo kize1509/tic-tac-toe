@@ -1,8 +1,7 @@
-package org.jetbrains.kotlinx.tictactoe
-import junit.framework.TestCase.assertFalse
-import junit.framework.TestCase.assertTrue
-import org.jetbrains.kotlinx.tictactoe.engine.Game
-import org.jetbrains.kotlinx.tictactoe.model.Mark
+package org.jetbrains.kotlinx.tictactoe.engine
+
+import junit.framework.TestCase
+import org.jetbrains.kotlinx.tictactoe.model.enums.Mark
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -31,7 +30,7 @@ class GameTest {
         game.makeMove(1)
         game.makeMove(4)
         game.makeMove(2)
-        assertTrue(game.isOver)
+        TestCase.assertTrue(game.isOver)
         assertEquals(Mark.X, game.winner)
     }
 
@@ -40,7 +39,7 @@ class GameTest {
         val game = Game("Alice", "Bob")
         game.makeMove(0)
         val result = game.makeMove(0) // already occupied
-        assertFalse(result)
+        TestCase.assertFalse(result)
         assertEquals(Mark.O, game.currentMark) // turn not switched
     }
 
@@ -50,7 +49,7 @@ class GameTest {
         game.makeMove(0)
         game.reset()
         assertEquals(Mark.X, game.currentMark)
-        assertTrue(game.board.getCells().all { it == Mark.EMPTY })
+        TestCase.assertTrue(game.board.getCells().all { it == Mark.EMPTY })
     }
 
 }

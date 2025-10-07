@@ -1,4 +1,4 @@
-package org.jetbrains.kotlinx.tictactoe.model
+package org.jetbrains.kotlinx.tictactoe.model.enums
 
 enum class Mark { X, O, EMPTY }
 
