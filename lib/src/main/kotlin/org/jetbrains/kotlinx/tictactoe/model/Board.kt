@@ -15,6 +15,13 @@ class Board {
         return true
     }
 
+
+    fun clear() {
+        for (i in 0..8) {
+            cells[i] = Mark.EMPTY
+        }
+    }
+
     fun getWinner(): Mark? {
         val lines = listOf(
             listOf(0,1,2), listOf(3,4,5), listOf(6,7,8),
