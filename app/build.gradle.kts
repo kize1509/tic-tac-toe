@@ -9,3 +9,9 @@ dependencies {
 application {
     mainClass = "org.jetbrains.kotlinx.tictactoe.MainKt"
 }
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
