@@ -26,4 +26,19 @@ class Game(val playerX: String, val playerO: String) {
         board.clear()
         currentMark = Mark.X
     }
+
+
+    fun displayBoard(): String {
+        val cells = board.getCells()
+        return cells.chunked(3).joinToString("\n") { row ->
+            row.joinToString(" | ") { it.name }
+        }
+    }
+
+    fun resultMessage(): String =
+        when {
+            winner != null -> "$winner wins!"
+            board.isFull() -> "Draw!"
+            else -> "Game in progress"
+        }
 }

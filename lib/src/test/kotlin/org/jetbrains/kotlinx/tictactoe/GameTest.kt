@@ -53,5 +53,4 @@ class GameTest {
         assertTrue(game.board.getCells().all { it == Mark.EMPTY })
     }
 
-
 }
