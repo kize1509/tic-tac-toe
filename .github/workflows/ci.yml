@@ -47,9 +47,3 @@ jobs:
           path: |
             **/build/reports/tests/
             **/build/test-results/
-
-      - name: Generate coverage report
-        run: ./gradlew :lib:jacocoTestReport
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4

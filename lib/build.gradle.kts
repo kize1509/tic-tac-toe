@@ -1,7 +1,6 @@
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization") version "2.0.0"
-    jacoco
 }
 
 dependencies {
@@ -22,5 +21,5 @@ tasks.test{
         events("passed", "skipped", "failed")
         showStandardStreams = true
     }
-    finalizedBy(tasks.jacocoTestReport)
 }
+
