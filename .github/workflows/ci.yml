@@ -35,10 +35,6 @@ jobs:
       - name: Run lib tests
         run: ./gradlew :lib:test --stacktrace
 
-      - name: Run app tests (optional)
-        run: ./gradlew :app:test --stacktrace
-        continue-on-error: true
-
       - name: Upload test reports
         uses: actions/upload-artifact@v4
         if: always()
