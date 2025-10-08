@@ -113,7 +113,7 @@ class Game(
         if (clearFile && ttPath != null) java.io.File(ttPath).delete()
     }
 
-    fun end(){
-        saveCache()
-    }
+    fun end(){ saveCache() }
+
+    fun getRawBoard(): List<Mark>{ return board.getCells() }
 }
