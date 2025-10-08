@@ -8,8 +8,7 @@ import org.jetbrains.kotlinx.tictactoe.model.enums.switch
 
 class Game(val playerX: String, val playerO: String) {
     val board = Board()
-    val state = GameState()
-    var stage = state.getStage()
+    val state = GameState(1)
     var currentMark = Mark.X
     val currentPlayerName: String
         get() = if (currentMark == Mark.X) playerX else playerO
@@ -23,17 +22,17 @@ class Game(val playerX: String, val playerO: String) {
     fun makeMove(pos: Int): Boolean {
         val success = board.placeMark(pos, currentMark)
         if (success) {
-            currentMark = currentMark.opponent()
             state.addMove()
-            stage = state.getStage()
+            currentMark = currentMark.opponent()
         }
         return success
     }
 
+
     fun reset() {
         board.clear()
         currentMark = Mark.X
-        stage = state.getStage().switch()
+        state.resetState()
     }
 
 
