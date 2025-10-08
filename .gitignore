@@ -38,6 +38,6 @@ bin/
 
 ### VS Code ###
 .vscode/
-
+lib/tt_cache.json
 ### Mac OS ###
 .DS_Store

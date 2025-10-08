@@ -13,7 +13,7 @@ class AIPlayer(
     private val zobrist: Zobrist = Zobrist(System.currentTimeMillis()),
 ) {
 
-    private val tt: MutableMap<Long, TTEntry> = mutableMapOf()
+    private var tt: MutableMap<Long, TTEntry> = mutableMapOf()
 
     fun chooseMove(board: Board, depth: Int): Int {
         var bestScore = Int.MIN_VALUE
@@ -46,7 +46,7 @@ class AIPlayer(
 
     fun attachCache(shared: MutableMap<Long, TTEntry>) {
         tt.clear()
-        tt.putAll(shared)
+        tt=shared
     }
 
 }

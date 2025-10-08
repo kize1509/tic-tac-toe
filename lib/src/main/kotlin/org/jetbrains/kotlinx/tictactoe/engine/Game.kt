@@ -12,8 +12,8 @@ class Game(
     val playerX: String,
     val playerO: String,
     private val aiPlayers: Map<Mark, AIPlayer> = emptyMap(),
-    private val ttPath: String? = "tt_cache.json",
-    private val cnfg: GameConfig? = null
+    private val ttPath: String? = "lib/tt_cache.json",
+    private val cnfg: GameConfig = GameConfig()
 ) {
     val board = Board()
     val state = GameState(1)
@@ -84,6 +84,7 @@ class Game(
     fun hasAI(): Boolean = aiPlayers.containsKey(currentMark)
 
     fun saveCache() {
+        print("saving cache")
         ttPath?.let { path ->
             TTPersistence.save(sharedTT, path)
         }
