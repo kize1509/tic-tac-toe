@@ -1,24 +1,21 @@
-package org.jetbrains.kotlinx.tictactoe
+package org.jetbrains.kotlinx.tictactoe.model
 
-import junit.framework.TestCase.assertFalse
-import junit.framework.TestCase.assertTrue
-import org.jetbrains.kotlinx.tictactoe.model.Board
-import org.jetbrains.kotlinx.tictactoe.model.Mark
+import junit.framework.TestCase
+import org.jetbrains.kotlinx.tictactoe.model.enums.Mark
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-
 
 class BoardTest{
     @Test
     fun `Mark should have X O and EMPTY`() {
         val values = Mark.values().toList()
-        assertTrue(values.containsAll(listOf(Mark.X, Mark.O, Mark.EMPTY)))
+        TestCase.assertTrue(values.containsAll(listOf(Mark.X, Mark.O, Mark.EMPTY)))
     }
     @Test
     fun `can place mark on empty cell`() {
         val board = Board()
-        assertTrue(board.placeMark(0, Mark.X))
+        TestCase.assertTrue(board.placeMark(0, Mark.X))
         assertEquals(Mark.X, board.getCells()[0])
     }
 
@@ -26,7 +23,7 @@ class BoardTest{
     fun `cannot place mark on occupied cell`() {
         val board = Board()
         board.placeMark(0, Mark.X)
-        assertFalse(board.placeMark(0, Mark.O))
+        TestCase.assertFalse(board.placeMark(0, Mark.O))
     }
 
 
@@ -73,7 +70,7 @@ class BoardTest{
             6 to Mark.O, 7 to Mark.X, 8 to Mark.X
         )
         moves.forEach { (pos, mark) -> b.placeMark(pos, mark) }
-        assertTrue(b.isFull())
+        TestCase.assertTrue(b.isFull())
         assertNull(b.getWinner())
     }
 

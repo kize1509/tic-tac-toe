@@ -1,5 +1,7 @@
 package org.jetbrains.kotlinx.tictactoe.model
 
+import org.jetbrains.kotlinx.tictactoe.model.enums.Mark
+
 class Board {
     private val cells = MutableList(9) { Mark.EMPTY }
 
