@@ -69,10 +69,29 @@ class Game(
 
     fun displayBoard(): String {
         val cells = board.getCells()
-        return cells.chunked(3).joinToString("\n") { row ->
-            row.joinToString(" | ") { it.name }
+        val cellStrings = cells.map {
+            when (it) {
+                Mark.EMPTY -> "   "
+                Mark.X -> " X "
+                Mark.O -> " O "
+            }
+        }
+
+        val divider = "---+---+---"
+        return buildString {
+            appendLine()
+            for (i in cells.indices step 3) {
+                append(cellStrings[i])
+                append("|")
+                append(cellStrings[i + 1])
+                append("|")
+                append(cellStrings[i + 2])
+                appendLine()
+                if (i < 6) appendLine(divider)
+            }
         }
     }
+
 
     fun resultMessage(): String =
         when {
@@ -84,7 +103,6 @@ class Game(
     fun hasAI(): Boolean = aiPlayers.containsKey(currentMark)
 
     fun saveCache() {
-        print("saving cache")
         ttPath?.let { path ->
             TTPersistence.save(sharedTT, path)
         }

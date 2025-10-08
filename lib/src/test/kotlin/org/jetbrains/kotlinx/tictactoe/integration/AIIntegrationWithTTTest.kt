@@ -5,7 +5,6 @@ import org.jetbrains.kotlinx.tictactoe.engine.Game
 import org.jetbrains.kotlinx.tictactoe.engine.cache.TTPersistence
 import org.jetbrains.kotlinx.tictactoe.engine.cache.Zobrist
 import org.jetbrains.kotlinx.tictactoe.model.GameConfig
-import org.jetbrains.kotlinx.tictactoe.model.enums.GamePhase
 import org.jetbrains.kotlinx.tictactoe.model.enums.Mark
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
