@@ -1,8 +1,7 @@
-package org.jetbrains.kotlinx.tictactoe.engine
+package org.jetbrains.kotlinx.tictactoe.utils
 
 import org.jetbrains.kotlinx.tictactoe.model.Board
 import org.jetbrains.kotlinx.tictactoe.model.enums.Mark
-import org.jetbrains.kotlinx.tictactoe.utils.Heuristics
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
