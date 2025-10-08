@@ -10,10 +10,10 @@ fun main() {
     println("=== Tic-Tac-Toe ===")
     val scanner = Scanner(System.`in`)
 
-    print("Enter name for Player X (or 'AI' for computer): ")
+    print("Enter name for Player X (or 'AI' for computer - tolerating lowercase): ")
     val playerXName = scanner.nextLine().ifBlank { "Player X" }
 
-    print("Enter name for Player O (or 'AI' for computer): ")
+    print("Enter name for Player O (or 'AI' for computer - tolerating lowercase): ")
     val playerOName = scanner.nextLine().ifBlank { "Player O" }
 
     val aiPlayers = mutableMapOf<Mark, AIPlayer>()
