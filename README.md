@@ -64,7 +64,11 @@ cd tic-tac-toe
 
 ### Run the CLI Application
 
-- Open main.kt in *app* package. Run the file.
+- Make sure that lib build is done.
+
+```bash
+./gradlew :app:run
+```
 
 ### Explore the Interactive Notebook
 
@@ -269,7 +273,10 @@ The `app/` module demonstrates a complete integration:
 - Persistent transposition table
 
 **Run it**:
-- Open main.kt and run the file.
+- Make sure that lib build is done.
+```bash 
+./gradlew :app:run
+```
 
 **Code**: See [`app/src/main/kotlin/org/jetbrains/kotlinx/tictactoe/main.kt`](app/src/main/kotlin/org/jetbrains/kotlinx/tictactoe/main.kt)
 
@@ -320,7 +327,6 @@ data class GameConfig(
 With transposition table caching:
 
 - **First move** (empty board): ~1500 positions evaluated, ~1ms
-- **Subsequent moves**: ~50-200 positions (90% cache hits), <1ms
 - **Endgame**: Near-instant (all positions cached)
 
 Cache persistence enables instant decisions across game sessions.
